@@ -11,7 +11,7 @@ public class FizzBuzzMultithreaded {
 
     public FizzBuzzMultithreaded(int n) {
         this.n = n;
-        this.current=1;
+        this.current = 1;
         this.queue = new ArrayBlockingQueue<>(n);
     }
 
@@ -64,8 +64,6 @@ public class FizzBuzzMultithreaded {
         }
 
 
-
-
     }
 
     public synchronized void fizz() throws InterruptedException {
@@ -108,7 +106,7 @@ public class FizzBuzzMultithreaded {
         }
     }
 
-    public synchronized void number()  throws InterruptedException{
+    public synchronized void number() throws InterruptedException {
 
         while (current <= n) {
             if (current % 3 != 0 && current % 5 != 0) {
