@@ -1,21 +1,18 @@
 package Task12;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-
 
 public class FizzBuzzMultithreaded {
     private int n;
     private int current;
-    private BlockingQueue<String> queue;
+
 
     public FizzBuzzMultithreaded(int n) {
         this.n = n;
         this.current = 1;
-        this.queue = new ArrayBlockingQueue<>(n);
     }
 
     public static void main(String[] args) {
+
         FizzBuzzMultithreaded test = new FizzBuzzMultithreaded(15);
 
         Thread threadA = new Thread(() -> {
@@ -42,9 +39,6 @@ public class FizzBuzzMultithreaded {
         Thread threadD = new Thread(() -> {
             try {
                 test.number();
-                if (test.current > test.n) {
-                    System.out.println(test.queue);
-                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -70,7 +64,7 @@ public class FizzBuzzMultithreaded {
 
         while (current <= n) {
             if (current % 3 == 0 && current % 5 != 0) {
-                queue.add("Fizz");
+                System.out.printf("Fizz ");
                 current++;
                 notifyAll();
             } else {
@@ -83,7 +77,7 @@ public class FizzBuzzMultithreaded {
 
         while (current <= n) {
             if (current % 5 == 0 && current % 3 != 0) {
-                queue.add("Buzz");
+                System.out.printf("Buzz ");
                 current++;
                 notifyAll();
             } else {
@@ -97,7 +91,7 @@ public class FizzBuzzMultithreaded {
 
         while (current <= n) {
             if (current % 3 == 0 && current % 5 == 0) {
-                queue.add("FizzBuzz");
+                System.out.printf("FizzBuzz ");
                 current++;
                 notifyAll();
             } else {
@@ -110,7 +104,7 @@ public class FizzBuzzMultithreaded {
 
         while (current <= n) {
             if (current % 3 != 0 && current % 5 != 0) {
-                queue.add(String.valueOf(current));
+                System.out.printf(String.valueOf(current+" "));
                 current++;
                 notifyAll();
             } else {
