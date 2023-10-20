@@ -64,7 +64,7 @@ public class FizzBuzzMultithreaded {
 
         while (current <= n) {
             if (current % 3 == 0 && current % 5 != 0) {
-                System.out.printf("Fizz ");
+                System.out.printf("Fizz  ");
                 current++;
                 notifyAll();
             } else {
@@ -77,7 +77,7 @@ public class FizzBuzzMultithreaded {
 
         while (current <= n) {
             if (current % 5 == 0 && current % 3 != 0) {
-                System.out.printf("Buzz ");
+                System.out.printf("Buzz  ");
                 current++;
                 notifyAll();
             } else {
@@ -91,7 +91,7 @@ public class FizzBuzzMultithreaded {
 
         while (current <= n) {
             if (current % 3 == 0 && current % 5 == 0) {
-                System.out.printf("FizzBuzz ");
+                System.out.printf("FizzBuzz  ");
                 current++;
                 notifyAll();
             } else {
@@ -104,7 +104,7 @@ public class FizzBuzzMultithreaded {
 
         while (current <= n) {
             if (current % 3 != 0 && current % 5 != 0) {
-                System.out.printf(String.valueOf(current+" "));
+                System.out.printf(String.valueOf(current+"  "));
                 current++;
                 notifyAll();
             } else {
